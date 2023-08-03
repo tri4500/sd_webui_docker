@@ -6,7 +6,7 @@ services:
       - 7860:7860
     volumes:
       - ./models:/home/sdWebUi/stable-diffusion-webui/models
-      - ./webui-user.sh:/home/sdWebUi/stable-diffusion-webui/webui-user.sh
+      - ./webui-user-cpu.sh:/home/sdWebUi/stable-diffusion-webui/webui-user.sh
     deploy:
       resources:
         reservations:
