@@ -1,0 +1,16 @@
+version: "suga_sd:0.1"
+services:
+  sd_webui:
+    image: "trihd4500/sd_webui:0.1"
+    ports:
+      - 7860:7860
+    volumes:
+      - ./models:/home/sdWebUi/stable-diffusion-webui/models
+      - ./webui-user.sh:/home/sdWebUi/stable-diffusion-webui/webui-user.sh
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
