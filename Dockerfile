@@ -14,6 +14,8 @@ RUN apt update
 
 RUN apt update && apt install -y libgl1-mesa-glx
 
+RUN apt update && apt install --no-install-recommends google-perftools -y
+
 RUN apt update
 
 USER sdWebUi
@@ -26,4 +28,4 @@ RUN git config --global --add safe.directory /home/sdWebUi/stable-diffusion-webu
 
 EXPOSE 7860
 
-CMD ["./webui.sh"]
+CMD ["./start-script.sh"]
