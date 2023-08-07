@@ -1,14 +1,16 @@
-version: "suga_sd:0.1"
+version: "3.1"
 services:
   sd_webui:
     image: "trihd4500/sd_webui:0.1"
     ports:
-      - 7860:7860
+      - "7860:7860"
     volumes:
       - ./models:/home/sdWebUi/stable-diffusion-webui/models
       - ./webui-user-gpu.sh:/home/sdWebUi/stable-diffusion-webui/webui-user.sh
       - ./webui.sh:/home/sdWebUi/stable-diffusion-webui/webui.sh
       - ./venv:/home/sdWebUi/stable-diffusion-webui/venv
+      - ./repositories:/home/sdWebUi/stable-diffusion-webui/repositories
+      - ./extensions:/home/sdWebUi/stable-diffusion-webui/extensions
     deploy:
       resources:
         reservations:
