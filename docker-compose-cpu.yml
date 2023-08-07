@@ -1,7 +1,7 @@
 version: "3.1"
 services:
   sd_webui:
-    image: "trihd4500/sd_webui:0.1"
+    image: "trihd4500/sd_webui:0.2"
     ports:
       - "7860:7860"
     volumes:
@@ -11,6 +11,7 @@ services:
       - ./venv:/home/sdWebUi/stable-diffusion-webui/venv
       - ./repositories:/home/sdWebUi/stable-diffusion-webui/repositories
       - ./extensions:/home/sdWebUi/stable-diffusion-webui/extensions
+      - ./outputs:/home/sdWebUi/stable-diffusion-webui/outputs
     deploy:
       resources:
         reservations:
